@@ -23,15 +23,18 @@
 // console.log(mahasiswa2);
 
 // // Function Declaration
+// const mahasiswaMethod = {
+//   makan: function (porsi) {
+//     this.energi += porsi;
+//   },
+// };
+
 // function Mahasiswa(nama, energi) {
 //   let mahasiswa = {};
 
 //   mahasiswa.nama = nama;
 //   mahasiswa.energi = energi;
-//   mahasiswa.makan = function (porsi) {
-//     this.energi += porsi;
-//     return mahasiswa;
-//   };
+//   mahasiswa.makan = mahasiswaMethod.makan;
 
 //   return mahasiswa;
 // }
@@ -41,19 +44,51 @@
 // console.log(mhs1);
 // console.log(mhs2);
 
-// Constructor Function
-function Mahasiswa(nama, energi) {
-  this.nama = nama;
-  this.energi = energi;
-  this.makan = function (porsi) {
+// // Constructor Function
+// function Mahasiswa(nama, energi) {
+//   this.nama = nama;
+//   this.energi = energi;
+//   this.makan = function (porsi) {
+//     this.energi += porsi;
+//     return this;
+//   };
+// }
+
+// let mhs1 = new Mahasiswa("Fahrul", 10);
+// let mhs2 = new Mahasiswa("Ujang", 15);
+// console.log(mhs1);
+// console.log(mhs2);
+
+// Object.create()
+const mahasiswaMethod = {
+  makan: function (porsi) {
     this.energi += porsi;
-    return this;
-  };
+  },
+};
+
+function Mahasiswa(nama, energi) {
+  let mahasiswa = Object.create(mahasiswaMethod); // membawa object mahasiswaMethod
+  // mirip seperti inheritance
+
+  mahasiswa.nama = nama;
+  mahasiswa.energi = energi;
+
+  return mahasiswa;
 }
 
-let mhs1 = new Mahasiswa("Fahrul", 10);
-let mhs2 = new Mahasiswa("Ujang", 15);
+let mhs1 = Mahasiswa("Fahrul", 10);
+let mhs2 = Mahasiswa("Ujang", 15);
 console.log(mhs1);
 console.log(mhs2);
 
-// Object.create()
+// contoh 2
+let obj1 = {
+  nama: "Fahrul",
+  umur: 19,
+};
+
+let obj2 = Object.create(obj1);
+obj2.nama = "Ujang"; // meng-override yang atas
+obj2.alamat = "Bandung";
+
+console.log(obj2.nama);
