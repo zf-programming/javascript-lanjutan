@@ -104,3 +104,22 @@
 
 // const person1 = new Person("person1", 20);
 // console.log(person1);
+
+// Latihan Box
+const box = document.querySelector(".box");
+box.addEventListener("click", function () {
+  let satu = "size";
+  let dua = "caption";
+
+  if (this.classList.contains(satu)) {
+    [satu, dua] = [dua, satu];
+  }
+  this.classList.toggle(satu);
+  setTimeout(() => this.classList.toggle(dua), 1000);
+});
+
+// const box = document.querySelector(".box");
+// box.addEventListener("click", (e) => {
+//   e.target.classList.toggle("size");
+//   setTimeout(() => e.target.classList.toggle("caption"), 1000);
+// });
