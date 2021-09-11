@@ -46,3 +46,33 @@
 // };
 // loopAction(3, alert);
 // loopAction(2, console.log);
+
+//// 4.2 Array.prototype Filter, Map, & Reduce
+const angka = [1, 9, 4, 5, 3, -4, -2, 0, 10, 2, 12];
+console.log(angka);
+
+// // mencari angka >= 3
+// const newAngka = [];
+// // for
+// for (let i = 0; i < angka.length; i++) {
+//   if (angka[i] >= 3) {
+//     newAngka.push(angka[i]);
+//   }
+// }
+
+// // filter
+// // mencari angka >= 3
+// const newAngka = angka.filter((value) => value >= 3);
+// console.log(newAngka);
+
+// // map
+// // Kalikan semua angka dengan 2
+// const newAngka = angka.map((value) => value * 2);
+// console.log(newAngka);
+
+// // reduce
+// // jumlahkan seluruh angka
+// const newAngka = angka.reduce(
+//   (previousValue, currentValue) => previousValue + currentValue
+// );
+// console.log(newAngka);
