@@ -76,3 +76,14 @@ console.log(angka);
 //   (previousValue, currentValue) => previousValue + currentValue
 // );
 // console.log(newAngka);
+
+//// Method Chaining
+// cari angka > 4
+// kalikan 3
+// jumlahkan
+
+const hasil = angka
+  .filter((value) => value > 4)
+  .map((value) => value * 2)
+  .reduce((prev, curr) => prev + curr);
+console.log(hasil);
