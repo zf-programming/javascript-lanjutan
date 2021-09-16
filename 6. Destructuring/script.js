@@ -70,15 +70,62 @@
 // const { nama: nama2, ...val } = obj;
 // console.log(val);
 
-// Mengambil field pada object
+/// Mengambil field pada object
+// const mhs = {
+//   nim: 301200020,
+//   nama: 'Fahrul',
+//   umur: 19,
+// };
+
+// const getNIM = (mhs) => mhs.nim;
+// const getNIM2 = ({ nim }) => nim;
+
+// console.log(getNIM(mhs));
+// console.log(getNIM2(mhs));
+
+// /// 6.2 Destructuring Function
+
+/// Destructure Function return
+/// Array
+// const penjumlahanPerkalian = (a, b) => [a + b, a * b];
+// console.log(penjumlahanPerkalian(2, 3));
+
+// const [jumlah, kali] = penjumlahanPerkalian(2, 3);
+// console.log(jumlah, kali);
+
+// const kalkulator = (a, b) => [a + b, a - b, a * b, a / b];
+// const [tambah, kali, kurang, bagi] = kalkulator(2, 3);
+// urutan berpengaruh
+// console.log(tambah, kali, kurang, bagi);
+
+/// Object
+// const kalkulator = (a, b) => {
+//   return {
+//     tambah: a + b,
+//     kurang: a - b,
+//     kali: a * b,
+//     bagi: a / b,
+//   };
+// };
+
+// const { kali, tambah, kurang, bagi } = kalkulator(2, 3);
+// console.log(tambah, kali, kurang, bagi);
+
+/// Destructure Function Arguments
 const mhs = {
-  nim: 301200020,
   nama: 'Fahrul',
+  nim: '301200020',
   umur: 19,
+  nilai: {
+    uas: 83,
+    uts: 80,
+  },
 };
+// const cetakMhs = (mhs) => `Nama saya ${mhs.nama}, saya ${mhs.umur} tahun`;
+// console.log(cetakMhs(mhs));
 
-const getNIM = (mhs) => mhs.nim;
-const getNIM2 = ({ nim }) => nim;
+// desctructure
+const cetakMhs = ({ nama, nim, nilai: { uas, uts } }) =>
+  `Nama ${nama} nim ${nim} nilai uas ${uas} nilai uts ${uts}`;
 
-console.log(getNIM(mhs));
-console.log(getNIM2(mhs));
+console.log(cetakMhs(mhs));
